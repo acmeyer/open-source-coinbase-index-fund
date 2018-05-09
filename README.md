@@ -10,7 +10,7 @@ The goal of this repository is to give anyone the ability to have an index of al
 ### GDAX
 In order to use this code, you'll first need to have a [GDAX account](https://gdax.com). Once you have an account, you'll need to [create an API Key](https://www.gdax.com/settings/api), check all permissions. Make note of the API key, secret, and passphrase, you'll need these.
 
-You'll also need to have enough funds (in your currency of choice) in your GDAX account
+You'll also need to have enough funds (in your currency of choice) in your GDAX account.
 
 ### On your own machine
 First clone the repository `git clone https://github.com/acmeyer/open-source-gdax-index-fund`. 
