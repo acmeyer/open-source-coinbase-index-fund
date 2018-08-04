@@ -7,7 +7,7 @@ const currencyMapper = {
   "Ripple": "XRP",
   "EOS": "EOS",
   "Cardano": "ADA",
-  "Stellar": "XLM",
+  "Stellar Lumens": "XLM",
   "Monero": "XMR",
   "IOTA": "MIOTA",
   "TRON": "TRX",
@@ -15,7 +15,9 @@ const currencyMapper = {
   "Dash": "DASH",
   "NEM": "XEM",
   "Ethereum Classic": "ETC",
-  "Tether": "USDT"
+  "Tether": "USDT",
+  "Basic Attention Token": "BAT",
+  "0x": "ZRX"
 }
 
 module.exports = {
