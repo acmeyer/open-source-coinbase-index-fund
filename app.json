@@ -1,8 +1,8 @@
 {
-  "name": "Open Source GDAX Index Fund",
-  "description": "Create your own index fund on GDAX that replicates Coinbase's Index Fund.",
-  "repository": "https://github.com/acmeyer/open-source-gdax-index-fund",
-  "keywords": ["node", "gdax", "crypto", "coinbase", "tokens", "trading", "exchange", "javascript"],
+  "name": "Open Source Coinbase Index Fund",
+  "description": "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
+  "repository": "https://github.com/acmeyer/open-source-coinbase-index-fund",
+  "keywords": ["node", "coinbase pro", "crypto", "coinbase", "tokens", "trading", "exchange", "javascript"],
   "formation": {
     "web": {
       "quantity": 1,
@@ -10,20 +10,20 @@
     }
   },
   "env": {
-    "GDAX_FIAT_CURRENCY": {
+    "COINBASE_FIAT_CURRENCY": {
       "description": "The fiat currency you want to use for your trades.",
       "value": "USD"
     },
-    "GDAX_API_KEY": {
-      "description": "Your GDAX API key.",
+    "COINBASE_API_KEY": {
+      "description": "Your Coinbase Pro API key.",
       "value": ""
     },
-    "GDAX_API_SECRET": {
-      "description": "Your GDAX API secret.",
+    "COINBASE_API_SECRET": {
+      "description": "Your Coinbase Pro API secret.",
       "value": ""
     },
-    "GDAX_API_PASSPHRASE": {
-      "description": "Your GDAX API passphrase.",
+    "COINBASE_API_PASSPHRASE": {
+      "description": "Your Coinbase Pro API passphrase.",
       "value": ""
     }
   },

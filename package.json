@@ -1,11 +1,11 @@
 {
-  "name": "open-source-gdax-index-fund",
+  "name": "open-source-coinbase-index-fund",
   "version": "0.0.1",
-  "description": "Create your own index fund on GDAX that replicates Coinbase's Index Fund.",
+  "description": "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/acmeyer/open-source-gdax-index-fund"
+    "url": "https://github.com/acmeyer/open-source-coinbase-index-fund"
   },
   "author": {
     "name": "Alex Meyer",
