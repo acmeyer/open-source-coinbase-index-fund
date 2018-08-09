@@ -1,6 +1,6 @@
 {
   "name": "open-source-coinbase-index-fund",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
   "license": "MIT",
   "repository": {

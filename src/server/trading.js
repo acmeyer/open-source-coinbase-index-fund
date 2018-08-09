@@ -30,9 +30,9 @@ async function buy(productName, amount) {
     funds: rounded_amount.toString(),
     product_id: productName + '-' + FIAT_CURRENCY,
   };
-  return COINBASE_CLIENT.buy(params).then((order) => {
+  return COINBASE_CLIENT.buy(params).then(async (order) => {
     // Save order for record keeping
-    let order = new Order({
+    let newOrder = new Order({
       coinbaseId: order.id,
       price: order.price,
       size: order.size,
@@ -45,7 +45,7 @@ async function buy(productName, amount) {
       status: order.status,
       settled: order.settled,
     });
-    await order.save();
+    await newOrder.save();
     console.log('Order placed', order);
   }).catch(err => console.log('Error placing order', err.data.message));
 }
@@ -56,9 +56,9 @@ async function sell(productName, amount) {
     size: amount.toString(),
     product_id: productName + '-' + FIAT_CURRENCY,
   };
-  return COINBASE_CLIENT.sell(params).then((order) => {
+  return COINBASE_CLIENT.sell(params).then(async (order) => {
     // Save order for record keeping  
-    let order = new Order({
+    let newOrder = new Order({
       coinbaseId: order.id,
       price: order.price,
       size: order.size,
@@ -71,7 +71,7 @@ async function sell(productName, amount) {
       status: order.status,
       settled: order.settled,
     });
-    await order.save();
+    await newOrder.save();
     console.log('Order placed', order);
   }).catch(err => console.log('Error placing order', err.data.message));
 }
