@@ -1,15 +1,15 @@
-import {COINBASE_CLIENT, FIAT_CURRENCY} from './env';
+import {COINBASE_CLIENT, FIAT_CURRENCY} from '../src/env';
 import _ from 'lodash';
-import {getWeights} from './utils/getWeights';
+import {getWeights} from '../src/utils/coinbaseWeights';
 
-function buy(productId, amount) {
+function buy(productName, amount) {
   // Round amount down to nearest cent because Coinbase doesn't accept lower and
   // guarantees account has enough funds to make purchases
   let rounded_amount = Math.floor(amount * 100) / 100;
   const params = {
     type: 'market',
     funds: rounded_amount.toString(),
-    product_id: productId,
+    product_id: productName + '-' + FIAT_CURRENCY,
   };
   COINBASE_CLIENT.buy(params).then((order) => {
     console.log('Order placed', order);
@@ -19,7 +19,7 @@ function buy(productId, amount) {
 function makePurchase(amount, weights) {
   weights.forEach(w => {
     const purchaseAmount = amount * w.amount;
-    buy(w.productId, purchaseAmount.toString());
+    buy(w.productName, purchaseAmount.toString());
   });
 }
 
@@ -30,7 +30,7 @@ function run() {
     let weights = await getWeights();
     let smallestAmount = _.min(_.map(weights, 'amount')) * availableBalance;
     // 10 is minimum order amount, the smallest order must be at least this much
-    if (smallestAmount > 0) {
+    if (smallestAmount > 10) {
       makePurchase(availableBalance, weights);
     } else {
       console.log(`Balance on account isn\'t high enough to trade. You have ${availableBalance} ${FIAT_CURRENCY} to trade in your account.`);

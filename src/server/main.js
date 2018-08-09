@@ -1,1 +1,1 @@
-require('server/rebalance.js');
+require('server/updateIndex.js');

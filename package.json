@@ -13,7 +13,9 @@
   },
   "scripts": {
     "start": "babel-node ./src/server",
-    "fund": "babel-node ./src/fund"
+    "fund": "babel-node ./scripts/fund",
+    "seed": "babel-node ./scripts/seed",
+    "updateIndex": "babel-node ./scripts/runUpdateIndex"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",

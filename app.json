@@ -2,7 +2,7 @@
   "name": "Open Source Coinbase Index Fund",
   "description": "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
   "repository": "https://github.com/acmeyer/open-source-coinbase-index-fund",
-  "keywords": ["node", "coinbase pro", "crypto", "coinbase", "tokens", "trading", "exchange", "javascript"],
+  "keywords": ["node", "coinbase pro", "crypto", "coinbase", "tokens", "trading", "exchange", "javascript", "mlab"],
   "formation": {
     "web": {
       "quantity": 1,
@@ -25,9 +25,44 @@
     "COINBASE_API_PASSPHRASE": {
       "description": "Your Coinbase Pro API passphrase.",
       "value": ""
+    },
+    "APP_ID": {
+      "description": "The application id for server app.",
+      "value": "open-source-coinbase-index-fund"
+    },
+    "SERVER_URL": {
+      "description": "The full url for the server api.",
+      "value": "https://example.herokuapp.com/api"
+    },
+    "MASTER_KEY": {
+      "description": "The master key for accessing the server api. Change this!",
+      "value": "600d2b7409f821c0d6efe36694aba2ddffb45f8e2d901b55"
+    },
+    "DATABASE_URI": {
+      "description": "The url to the server's database.",
+      "value": "MONGODB_URI"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of web workers you want running concurrently.",
+      "value": "1"
+    },
+    "USE_ENCRYPTED_PASSWORDS": {
+      "description": "Whether to store admin dashboard passwords in plain text or encrypted.",
+      "value": "false"
+    },
+    "DASHBOARD_USERS": {
+      "description": "Users of the admin dashboard.",
+      "value": "admin:P@ssw0rd!"
+    },
+    "TRUST_PROXY": {
+      "description": "Whether or not to trust the proxy server. On Heroku you can.",
+      "value": "1"
     }
   },
   "addons": [
-    "scheduler"
+    "scheduler",
+    {
+      "plan": "mongolab:sandbox"
+    }
   ]
 }

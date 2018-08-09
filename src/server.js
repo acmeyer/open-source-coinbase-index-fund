@@ -12,7 +12,6 @@ import {
   MASTER_KEY,
   DASHBOARD_USERS,
   DATABASE_URI,
-  READ_ONLY_MASTER_KEY,
   WORKERS,
   USE_ENCRYPTED_PASSWORDS,
   TRUST_PROXY,
@@ -38,16 +37,15 @@ if (cluster.isMaster) {
       cloud: path.resolve(__dirname, 'cloud.js'),
       appId: APP_ID,
       masterKey: MASTER_KEY,
-      readOnlyMasterKey: READ_ONLY_MASTER_KEY,
       serverURL: SERVER_URL,
     })
   );
 
   let users = [];
   if (DASHBOARD_USERS) {
-    DASHBOARD_USERS.forEach(u => {
-      let [user, pass, readOnly] = u.split(':');
-      users.push({user, pass, readOnly});
+    DASHBOARD_USERS.split(',').map(u => {
+      let [user, pass] = u.split(':');
+      users.push({user, pass});
     });
   }
 
@@ -58,7 +56,6 @@ if (cluster.isMaster) {
         serverURL: SERVER_URL,
         appId: APP_ID,
         masterKey: MASTER_KEY, 
-        readOnlyMasterKey: READ_ONLY_MASTER_KEY, // Make dashboard read only for some users
         production: !IS_DEVELOPMENT,
         appName: 'Open Source Coinbase Index Fund',
       }],
