@@ -12,13 +12,13 @@ In order to use this code, you'll first need to have a [Coinbase Pro account](ht
 
 You'll also need to make sure you have enough funds in your Coinbase Pro account to execute the trades.
 
-### One-time Usage vs Automatic Usage
+## One-time Usage vs Automatic Usage
 There are two ways you can choose to use this repository. The first is to use it to make a one-time purchase of currencies on Coinbase Pro in the amount equal to their relative market cap sizes (see [One-time Usage](#one-time-usage) below). The second way is to use it as an automatic crypto index fund, much like if you were to buy into Coinbase's Index Fund (see [Automatic Usage](#automatic-usage) below).
 
-### One-time Usage
+## One-time Usage
 The one-time usage executes trades in your Coinbase Pro account with the fiat currency of your choice to buy an amount of each crypto currency available equal to their relative market cap sizes. Note that this will use all of the fiat currency you have in your account available.
 
-#### Run on your own machine
+### Run on your own machine
 First clone the repository `git clone https://github.com/acmeyer/open-source-coinbase-index-fund`. 
 
 Next, you have to set environment variables for `COINBASE_FIAT_CURRENCY`, `COINBASE_API_KEY`, `COINBASE_API_SECRET`, and `COINBASE_API_PASSPHRASE`. The fiat currency environment variable should be the fiat currency you want to do trades in. The default is 'USD'.
@@ -31,7 +31,7 @@ Finally, all you have to do to purchase an index fund of available currencies on
 
 If you would like to run this code automatically whenever your Coinbase Pro account has a high enough balance, you can deploy this code to a server and use a scheduler.
 
-#### Deploy on a server
+### Deploy on a server
 The easiest way to deploy this code to a server is by clicking the button below. Once you do that, you only have to set up the `COINBASE_FIAT_CURRENCY`, `COINBASE_API_KEY`, `COINBASE_API_SECRET`, and `COINBASE_API_PASSPHRASE` environment variables and create a scheduler task that runs `yarn run fund`.
 
 Once the server and scheduler are set, it will automatically make trades whenever your Coinbase Pro account has sufficient funds in the fiat currency you set the `COINBASE_FIAT_CURRENCY` to.
@@ -42,7 +42,7 @@ Once the server and scheduler are set, it will automatically make trades wheneve
 
 You can also deploy this code to other servers. The setup is very similar.
 
-### Automatic Usage
+## Automatic Usage
 Use this set up if you would like to convert your Coinbase Pro account into an Index Fund account. This set up a server to automatically manage your Coinbase Pro account to replicate [Coinbase's Index Fund](https://am.coinbase.com/index). 
 
 **Note:** This set up will rebalance ALL currencies in your Coinbase Pro account to match the Index's weights, even if you already have different amounts of currencies in your account before running this server. Only use this set up if you don't care that the code will make trades to rebalance your account.
@@ -51,7 +51,7 @@ Use this set up if you would like to convert your Coinbase Pro account into an I
 
 The goal is to add the ability to manage an individual Coinbase Pro account so that it can have an Index Fund and still execute other trades. If you would like the ability to do this, please submit a pull-request!
 
-#### Run on your own machine
+### Run on your own machine
 First clone the repository `git clone https://github.com/acmeyer/open-source-coinbase-index-fund`.
 
 Next, you have to set environment variables for `COINBASE_FIAT_CURRENCY`, `COINBASE_API_KEY`, `COINBASE_API_SECRET`, and `COINBASE_API_PASSPHRASE`. The fiat currency environment variable should be the fiat currency you want to do trades in. The default is 'USD'.
@@ -66,7 +66,7 @@ In order to actually execute any trades, you have to either manually run the bac
 
 To manage your Coinbase Pro account automatically, however, you'll need to set this up as a scheduled job. You can do this on your own machine but it's much easier to have a server manage it for you.
 
-#### Deploy on a server
+### Deploy on a server
 The easiest way to deploy this code to a server is by clicking the button below. Once you do that, you have to set up the all the environment variables found in Heroku's **Config Vars** section under the app's **Settings** tab. 
 
 Next, create a scheduler task that runs `yarn run updateIndex`. If you would like to match Coinbase's Index Fund exactly, then schedule this task to run daily at 12:00am UTC (5:00pm PT).
