@@ -1,8 +1,7 @@
 {
   "name": "open-source-coinbase-index-fund",
-  "version": "0.0.1",
-  "description":
-    "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
+  "version": "0.0.2",
+  "description": "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,13 +12,20 @@
     "url": "https://github.com/acmeyer"
   },
   "scripts": {
-    "fund": "babel-node ./src/fund"
+    "start": "babel-node ./src/server",
+    "fund": "babel-node ./scripts/fund",
+    "seed": "babel-node ./scripts/seed",
+    "updateIndex": "babel-node ./scripts/runUpdateIndex"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "express": "^4.16.3",
     "gdax": "^0.7.0",
     "lodash": "^4.17.10",
+    "parse": "^2.0.0",
+    "parse-dashboard": "^1.2.0",
+    "parse-server": "^2.8.2",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   },
