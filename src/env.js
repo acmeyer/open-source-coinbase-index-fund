@@ -22,4 +22,5 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production';
 export const USE_ENCRYPTED_PASSWORDS = process.env.USE_ENCRYPTED_PASSWORDS || false;
 export const DASHBOARD_USERS = process.env.DASHBOARD_USERS || 'admin:p@ssw0rds';
 // Must trust server ssl config!!!
-export const TRUST_PROXY = process.env.TRUST_PROXY || undefined;
+export const TRUST_PROXY = process.env.TRUST_PROXY || false;
+export const COOKIE_SESSION_SECRET = process.env.COOKIE_SESSION_SECRET || '48875a701aa6556cb31'

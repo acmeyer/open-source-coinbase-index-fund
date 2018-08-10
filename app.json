@@ -36,7 +36,7 @@
     },
     "MASTER_KEY": {
       "description": "The master key for accessing the server api. Change this!",
-      "value": "600d2b7409f821c0d6efe36694aba2ddffb45f8e2d901b55"
+      "value": ""
     },
     "DATABASE_URI": {
       "description": "The url to the server's database.",
@@ -47,16 +47,20 @@
       "value": "1"
     },
     "USE_ENCRYPTED_PASSWORDS": {
-      "description": "Whether to store admin dashboard passwords in plain text or encrypted.",
+      "description": "Whether to store admin dashboard passwords in plain text or encrypted. If encrypted, use a bcrypt generator to store password in DASHBOARD_USERS below",
       "value": "false"
     },
     "DASHBOARD_USERS": {
-      "description": "Users of the admin dashboard.",
+      "description": "Users of the admin dashboard, using username:password format and comma separated.",
       "value": "admin:P@ssw0rd!"
     },
     "TRUST_PROXY": {
       "description": "Whether or not to trust the proxy server. On Heroku you can.",
-      "value": "1"
+      "value": "true"
+    },
+    "COOKIE_SESSION_SECRET": {
+      "description": "Random secret string.",
+      "value": ""
     }
   },
   "addons": [

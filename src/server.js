@@ -62,6 +62,9 @@ if (cluster.isMaster) {
       users,
       useEncryptedPasswords: USE_ENCRYPTED_PASSWORDS,
       trustProxy: TRUST_PROXY,
+    }, {
+      cookieSessionSecret: COOKIE_SESSION_SECRET,
+      allowInsecureHTTP: TRUST_PROXY,
     })
   );
 
