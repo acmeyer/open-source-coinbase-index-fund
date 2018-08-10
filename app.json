@@ -1,5 +1,5 @@
 {
-  "name": "Open Source Coinbase Index Fund",
+  "name": "Open Source Index Fund",
   "description": "Create your own index fund on Coinbase Pro that replicates Coinbase's Index Fund.",
   "repository": "https://github.com/acmeyer/open-source-coinbase-index-fund",
   "keywords": ["node", "coinbase pro", "crypto", "coinbase", "tokens", "trading", "exchange", "javascript", "mlab"],
