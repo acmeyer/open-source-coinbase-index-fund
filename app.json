@@ -56,7 +56,7 @@
     },
     "TRUST_PROXY": {
       "description": "Whether or not to trust the proxy server. On Heroku you can.",
-      "value": "true"
+      "value": "1"
     },
     "COOKIE_SESSION_SECRET": {
       "description": "Random secret string.",

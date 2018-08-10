@@ -16,6 +16,7 @@ import {
   USE_ENCRYPTED_PASSWORDS,
   TRUST_PROXY,
   IS_DEVELOPMENT,
+  COOKIE_SESSION_SECRET,
 } from "./env";
 
 Parse.initialize(APP_ID);
