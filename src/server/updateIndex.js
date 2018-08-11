@@ -29,9 +29,6 @@ Parse.Cloud.job('update_index', async (request, status) => {
   // NOTE: assumes Coinbase only shows new currencies on their index after the 5 day waiting period
   // that they've outlined in their methodology
   if (!_.isEqual(existingCurrencies.sort(), newCurrencies.sort())) {
-    console.log('currencies are not equal!');
-    console.log('existing currencies', existingCurrencies);
-    console.log('new currencies', newCurrencies);
     rebalance = true;
     newCurrencies.forEach(async (currencyName) => {
       // check if it already exists, if it doesn't add it
