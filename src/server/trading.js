@@ -1,8 +1,9 @@
 /* global Parse */
 import {COINBASE_CLIENT, FIAT_CURRENCY} from '../env';
 const Order = Parse.Object.extend('Order');
+import * as Gdax from 'gdax';
 
-// Response object from Coinbase
+// Order response object from Coinbase
 // {
 //   "id": "d0c5340b-6d6c-49d9-b567-48c4bfca13d2",
 //   "price": "0.10000000",
@@ -83,6 +84,24 @@ function buyWeight(totalAmount, weight) {
 
 function sellAll(account) {
   return sell(account.currency, account.balance);
+}
+
+function subscribeToChannel() {
+  // 1. Get the various currencies in the database, then use those and the fiat currency for the products list
+  // 2. Connect to the user channel
+  // 3. Subscribe to the orders that are not yet filled
+  // 4. Update the orders as new messages come in
+  // 5. Unsubscribe when the order has been filled
+  // const websocket = new Gdax.WebsocketClient(
+  //   ['BTC-USD', 'ETH-USD'],
+  //   'wss://ws-feed-public.sandbox.gdax.com',
+  //   {
+  //     key: 'suchkey',
+  //     secret: 'suchsecret',
+  //     passphrase: 'muchpassphrase',
+  //   },
+  //   { channels: ['full', 'level2'] }
+  // );
 }
 
 module.exports = {
