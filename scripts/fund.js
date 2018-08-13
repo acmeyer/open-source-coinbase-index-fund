@@ -28,13 +28,14 @@ function run() {
     let fiatAccount = _.find(accounts, ['currency', FIAT_CURRENCY]);
     let availableBalance = parseFloat(fiatAccount.available);
     let weights = await getWeights();
-    let smallestAmount = _.min(_.map(weights, 'amount')) * availableBalance;
+    // let smallestAmount = _.min(_.map(weights, 'amount')) * availableBalance;
+    makePurchase(availableBalance, weights);
     // 10 is minimum order amount, the smallest order must be at least this much
-    if (smallestAmount > 10) {
-      makePurchase(availableBalance, weights);
-    } else {
-      console.log(`Balance on account isn\'t high enough to trade. You have ${availableBalance} ${FIAT_CURRENCY} to trade in your account.`);
-    }
+    // if (smallestAmount > 10) {
+    //   makePurchase(availableBalance, weights);
+    // } else {
+    //   console.log(`Balance on account isn\'t high enough to trade. You have ${availableBalance} ${FIAT_CURRENCY} to trade in your account.`);
+    // }
   }).catch(err => console.log(err));
 }
 
