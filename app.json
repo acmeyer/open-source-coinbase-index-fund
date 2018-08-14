@@ -10,6 +10,10 @@
     }
   },
   "env": {
+    "COINBASE_API_URL": {
+      "description": "The api url to use. This can either be the Coinbase Sandbox API url or the Live Site's API url.",
+      "value": "https://api-public.sandbox.pro.coinbase.com"
+    },
     "COINBASE_FIAT_CURRENCY": {
       "description": "The fiat currency you want to use for your trades.",
       "value": "USD"
