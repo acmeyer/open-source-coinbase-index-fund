@@ -1,11 +1,13 @@
 import * as Gdax from 'gdax';
 
 // Coinbase
+export const COINBASE_API_URL = process.env.COINBASE_API_URL || 'https://api-public.sandbox.pro.coinbase.com';
 export const FIAT_CURRENCY = process.env.COINBASE_FIAT_CURRENCY;
 export const COINBASE_CLIENT = new Gdax.AuthenticatedClient(
   process.env.COINBASE_API_KEY,
   process.env.COINBASE_API_SECRET,
-  process.env.COINBASE_API_PASSPHRASE
+  process.env.COINBASE_API_PASSPHRASE,
+  COINBASE_API_URL,
 );
 
 // Server

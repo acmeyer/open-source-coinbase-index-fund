@@ -9,7 +9,15 @@ function rebalancePortfolio() {
     let cryptoAccounts = _.filter(accounts, (account) => account.currency !== FIAT_CURRENCY);
     // for each account, sell all existing balances
     await cryptoAccounts.map(sellAll);
-  }).then(() => {
+  }).then(async () => {
+    // Wait until orders have settled
+    let pending = true;
+    while (pending) {
+      const orders = await COINBASE_CLIENT.getOrders({status: 'pending'})
+      if (orders.length === 0) {
+        pending = false;
+      }
+    }
     // Get the fiat account for purchases
     return COINBASE_CLIENT.getAccounts().then((accounts) => {
       return _.find(accounts, ['currency', FIAT_CURRENCY]);

@@ -1,7 +1,6 @@
 /* global Parse */
 import {COINBASE_CLIENT, FIAT_CURRENCY} from '../env';
 const Order = Parse.Object.extend('Order');
-import * as Gdax from 'gdax';
 
 // Order response object from Coinbase
 // {
@@ -48,7 +47,7 @@ async function buy(productName, amount) {
     });
     await newOrder.save();
     console.log('Order placed', order);
-  }).catch(err => console.log('Error placing order', err.data.message));
+  }).catch(err => console.log('Error placing order', err));
 }
 
 async function sell(productName, amount) {
@@ -74,7 +73,7 @@ async function sell(productName, amount) {
     });
     await newOrder.save();
     console.log('Order placed', order);
-  }).catch(err => console.log('Error placing order', err.data.message));
+  }).catch(err => console.log('Error placing order', err));
 }
 
 function buyWeight(totalAmount, weight) {
@@ -84,24 +83,6 @@ function buyWeight(totalAmount, weight) {
 
 function sellAll(account) {
   return sell(account.currency, account.balance);
-}
-
-function subscribeToChannel() {
-  // 1. Get the various currencies in the database, then use those and the fiat currency for the products list
-  // 2. Connect to the user channel
-  // 3. Subscribe to the orders that are not yet filled
-  // 4. Update the orders as new messages come in
-  // 5. Unsubscribe when the order has been filled
-  // const websocket = new Gdax.WebsocketClient(
-  //   ['BTC-USD', 'ETH-USD'],
-  //   'wss://ws-feed-public.sandbox.gdax.com',
-  //   {
-  //     key: 'suchkey',
-  //     secret: 'suchsecret',
-  //     passphrase: 'muchpassphrase',
-  //   },
-  //   { channels: ['full', 'level2'] }
-  // );
 }
 
 module.exports = {
