@@ -91,6 +91,8 @@ Next, create a scheduler task that runs `yarn run updateIndex`. If you would lik
 
 Once the server and scheduler are set, it will automatically check the current currency weights on Coinbase and rebalance your Coinbase Pro account to match, if necessary. See the below section on [Methodology](#methodology) to understand when these rebalances will happen.
 
+Finally, in order to keep your orders up to date with Coinbase, add another scheduler task that runs `yarn run updateOrders`. You can set this to run at whatever frequency you desire. This task just keeps the orders in your database in sync with Coinbase.
+
 **Note:** On first set up, the database will have no currencies already in it. That means the first time the `update_index` background job is run, it will rebalance your portfolio. This may be desirable if you want your account to be updated as soon as you set this server up, but if you don't want the rebalancing to happen right away and instead wait until either a new currency is added to Coinbase's Index Fund or January 1st of the next year, then you will need to seed your database with the current currencies before the background job runs. This can be easily done by running `yarn run seed` in the app's console.
 
 <a href="https://heroku.com/deploy" target="_blank">
