@@ -130,7 +130,7 @@ Released under the MIT License. See [LICENSE](LICENSE) or http://opensource.org/
 - [ ] Add option to use different types of orders to avoid trading fees
 - [ ] Add tests
 - [ ] Better error handling
-- [ ] Add background job to update executed orders on Coinbase Pro to keep data up to date
+- [x] Add background job to update executed orders on Coinbase Pro to keep data up to date
 - [ ] Separate index fund vs rest of Coinbase Pro account
 - [ ] Add frontend UI for viewing Index Fund's performance
 - [ ] Add an official calculation of Methodology rather than pulling weights from Coinbase
