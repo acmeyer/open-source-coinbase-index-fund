@@ -104,7 +104,7 @@ You can also deploy this code to other servers. The setup is very similar.
 ## Methodology
 This code is meant to replicate [Coinbase's Index Fund](https://am.coinbase.com/index). You can read more about their methodology here: https://am.coinbase.com/documents/cbi-methodology.pdf.
 
-Currently, the asset weights are pulled from https://index-am.coinbase.com//v2/indices/cbi/composition.json to match Coinbase's weights. In the future, the goal is to do this all automatically with an official calculation, that uses the same formula Coinbase does. That way, if Coinbase ever changes the url or otherwise removes the ability to get this information, the code can still work properly.
+Currently, the asset weights are pulled from https://index-am.coinbase.com//v1/cbi/composition.json to match Coinbase's weights. In the future, the goal is to do this all automatically with an official calculation, that uses the same formula Coinbase does. That way, if Coinbase ever changes the url or otherwise removes the ability to get this information, the code can still work properly.
 
 The two main takeaways are that the Index Fund gets rebalance when one of two things happens:
 
