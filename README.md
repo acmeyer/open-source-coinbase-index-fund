@@ -2,7 +2,7 @@
 Create your own index fund on Coinbase Pro that replicates [Coinbase's Index Fund](https://am.coinbase.com).
 
 ## Why
-Coinbase released their [Index Fund](https://am.coinbase.com) in March. However, it is restricted to accredited investors only and has a high 2% annual management fee.
+Coinbase released their [Index Fund](https://am.coinbase.com) in March 2018. However, it is restricted to accredited investors only and has a high 2% annual management fee.
 
 The goal of this repository is to give anyone the ability to have an index of all assets listed on Coinbase Pro with lower fees.
 
