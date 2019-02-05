@@ -137,3 +137,14 @@ Released under the MIT License. See [LICENSE](LICENSE) or http://opensource.org/
 
 ## Disclaimer
 This repository is for information purposes only. Use the code at your own risk. You may lose money if you use this code. Trading crypto currencies for real money is extremely risky and likely to result in disappointment. You bear sole responsibility for anything that happens using this code.
+
+## Support
+To support the development of this project, you can make donations to the below addresses:
+
+BTC: 3FEUPGgdgmzu7w4GkW7vnBwRWqdyCsy53v
+
+BCH: qqkw35llyty9t8gd2aafg6j946xjpaqdkc8adx8q04
+
+ETH: 0x93fd6895a4756B6233CAa3B491594d0EB040D189
+
+ZEC: t1Mr3updMscxiw1r9ob726W5VucieVknEcC
